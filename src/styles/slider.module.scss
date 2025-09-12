@@ -1,0 +1,29 @@
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: transparent;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin: 0;
+  position: absolute;
+  bottom: 25px;
+  z-index: 3;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.sliderContainer {
+  opacity: 0.3;
+  height: 64px;
+  position: relative;
+  /*margin-bottom: 20px;*/
+
+  will-change: opacity;
+  transition: opacity 0.3s;
+}

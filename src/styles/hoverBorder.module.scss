@@ -1,0 +1,22 @@
+.hoverBorder {
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  background-size: 20px;
+  border: 1px solid #222;
+  border-color: #222;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  will-change: border-color;
+  transition: border-color 0.2s;
+
+  &:active {
+    border-color: #44d62c;
+  }
+
+  &:hover {
+    border-color: #5d5d5d;
+    cursor: pointer;
+  }
+}

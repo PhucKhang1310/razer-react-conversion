@@ -1,0 +1,43 @@
+.widget {
+  flex: 0 0 auto;
+  max-width: 600px;
+  min-width: 600px;
+
+  border-radius: 5px;
+  margin: 10px auto;
+  background-color: #111;
+  height: auto;
+  padding: 30px 40px;
+  font-size: 14px;
+  position: relative;
+
+  .title {
+    color: #44d62c;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: RazerF5;
+    margin-bottom: 20px;
+
+    .switchContainer {
+      position: relative;
+      top: 3px;
+      left: 10px;
+    }
+  }
+
+  .h2Title {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    
+    .switchContainer {
+      position: relative;
+      top: 3px;
+      left: 10px;
+    }
+  }
+
+  .h2Body {
+    color: #999;
+    margin-bottom: 20px;
+  }
+}
