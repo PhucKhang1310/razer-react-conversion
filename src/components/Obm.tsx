@@ -1,9 +1,13 @@
 import styles from "../styles/obm.module.scss"
 import hoverBorder from "../styles/hoverBorder.module.scss"
 
-const Obm = () => {
+interface ObmProps{
+  "data-tooltip"?: string;
+}
+
+const Obm = ({ "data-tooltip": dataTooltip }: ObmProps) => {
   return (
-    <div className={`${styles.obm} ${hoverBorder.hoverBorder}`} />
+    <div className={`${styles.obm} ${hoverBorder.hoverBorder}`} data-tooltip={dataTooltip} />
   )
 }
 

@@ -1,5 +1,5 @@
 import styles from "../styles/profileBar.module.scss";
-import tip from "../styles/icontip.module.scss"
+import tip from "../styles/icontip.module.scss";
 
 import Batt from "./Batt";
 import Dots3 from "./Dots3";
@@ -14,13 +14,9 @@ const ProfileBar = () => {
       <div className={styles.profileText}>profile</div>
       <Dropdown />
       <Dots3 />
-      <span data-tooltip="On-Board Memory">
-        <Obm />
-      </span>
+      <Obm data-tooltip="On-Board Memory" />
       <div className={styles.divider} />
-      <span data-tooltip="30% Battery">
-        <Batt />
-      </span>
+      <Batt data-tooltip="30% Battery" />
     </div>
   );
 };
