@@ -1,5 +1,3 @@
-
-
 .profileBar {
   display: flex;
   width: 95%;
@@ -22,9 +20,13 @@
     display: flex;
     flex: 0 0 auto;
     position: relative;
+    &.profileDel {
+      position: absolute;
+    }
   }
+
 }
 
-.profileText{
+.profileText {
   display: block;
 }

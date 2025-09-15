@@ -6,6 +6,7 @@ import Dots3 from "./Dots3";
 import Dropdown from "./Dropdown";
 import Loader from "./Loader";
 import Obm from "./Obm";
+import DeleteAlert from "./DeleteAlert";
 
 const profiles = [
   "Default Profile",
@@ -25,6 +26,9 @@ const ProfileBar = () => {
       <div className={styles.profileText}>profile</div>
       <Dropdown id="profile-dropdown" options={profiles} defaultSelected={4} />
       <Dots3 />
+      <div className={styles.profileDel}>
+        <DeleteAlert />
+      </div>
       <Obm data-tooltip="On-Board Memory" />
       <div className={styles.divider} />
       <Batt data-tooltip="30% Battery" />

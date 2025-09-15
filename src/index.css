@@ -1,78 +1,82 @@
 @import url(.\fonts\roboto.css);
 
 body {
-	background-color: #666;
-	/*background-color: #fff;*/
-	color: #ccc;
-	min-width: 1024px;
-	min-height: 730px;
-	width: 100%;
-    max-width: 1920px;
-	height: 100%;
-	overflow: hidden;
-	font-family: Roboto, sans-serif;
-	font-size: 16px;
-	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-	margin: 0;
+  background-color: #666;
+  /*background-color: #fff;*/
+  color: #ccc;
+  min-width: 1024px;
+  min-height: 730px;
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  overflow: hidden;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+  margin: 0;
 }
 
-div{
-	box-sizing: border-box;
+div {
+  box-sizing: border-box;
 }
 
 .scrollable {
-    overflow-y: auto;
-    overflow-x: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.t-center {
+  text-align: center;
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    /*border: 1px solid rgba(0, 0, 0, 0);*/
-    /*border-radius: 4px;*/
-    /*background-clip: padding-box;*/
-    /*border: 1px solid rgba(0, 0, 0, 0);*/
-    /*border-left: 2px solid rgba(0,0,0,0);*/
-    /*border-right: 2px solid rgba(0,0,0,0);*/
+  width: 8px;
+  height: 8px;
+  /*border: 1px solid rgba(0, 0, 0, 0);*/
+  /*border-radius: 4px;*/
+  /*background-clip: padding-box;*/
+  /*border: 1px solid rgba(0, 0, 0, 0);*/
+  /*border-left: 2px solid rgba(0,0,0,0);*/
+  /*border-right: 2px solid rgba(0,0,0,0);*/
 }
 ::-webkit-scrollbar-corner {
-    background-color: #222;
+  background-color: #222;
 }
 ::-webkit-scrollbar-track {
-    background-color: #222;
-    height: 8px;
-    width: 8px;
+  background-color: #222;
+  height: 8px;
+  width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.3);
-    border-radius: 4px;
-    width: 6px;
-    height: 6px;
-    border: 1px solid rgba(0, 0, 0, 0);
-    box-sizing: border-box;
-    /*border-top: 2px solid rgba(0,0,0,0);*/
-    /*border-bottom: 2px solid rgba(0,0,0,0);*/
-    background-clip: padding-box;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  width: 6px;
+  height: 6px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  /*border-top: 2px solid rgba(0,0,0,0);*/
+  /*border-bottom: 2px solid rgba(0,0,0,0);*/
+  background-clip: padding-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #44d62c; 
-    border: 1px solid rgba(0, 0, 0, 0);
-    /*border-radius: 4px;*/
-    /*width: 6px;*/
-    /*border: 1px solid rgba(0, 0, 0, 0);*/
-    /*border-top: 2px solid rgba(0,0,0,0);*/
-    /*border-bottom: 2px solid rgba(0,0,0,0);*/
-    background-clip: padding-box;
-    /*background-clip: padding-box;*/
+  background: #44d62c;
+  border: 1px solid rgba(0, 0, 0, 0);
+  /*border-radius: 4px;*/
+  /*width: 6px;*/
+  /*border: 1px solid rgba(0, 0, 0, 0);*/
+  /*border-top: 2px solid rgba(0,0,0,0);*/
+  /*border-bottom: 2px solid rgba(0,0,0,0);*/
+  background-clip: padding-box;
+  /*background-clip: padding-box;*/
 }
 ::-webkit-scrollbar-thumb:active {
-    background: #2F941E; 
-    border: 1px solid rgba(0, 0, 0, 0);
-    /*border-radius: 4px;*/
-    /*width: 6px;*/
-    /*border: 1px solid rgba(0, 0, 0, 0);*/
-    /*border-top: 2px solid rgba(0,0,0,0);*/
-    /*border-bottom: 2px solid rgba(0,0,0,0);*/
-    background-clip: padding-box;
-    /*background-clip: padding-box;*/
+  background: #2f941e;
+  border: 1px solid rgba(0, 0, 0, 0);
+  /*border-radius: 4px;*/
+  /*width: 6px;*/
+  /*border: 1px solid rgba(0, 0, 0, 0);*/
+  /*border-top: 2px solid rgba(0,0,0,0);*/
+  /*border-bottom: 2px solid rgba(0,0,0,0);*/
+  background-clip: padding-box;
+  /*background-clip: padding-box;*/
 }
