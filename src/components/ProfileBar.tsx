@@ -7,12 +7,23 @@ import Dropdown from "./Dropdown";
 import Loader from "./Loader";
 import Obm from "./Obm";
 
+const profiles = [
+  "Default Profile",
+  "Profile 2",
+  "Profile 3",
+  "Profile 4",
+  "Profile 5",
+  "Profile 6",
+  "Profile 7",
+  "Profile 8",
+];
+
 const ProfileBar = () => {
   return (
     <div className={`${styles.profileBar} ${tip.tipContainer}`}>
       <Loader />
       <div className={styles.profileText}>profile</div>
-      <Dropdown />
+      <Dropdown id="profile-dropdown" options={profiles} defaultSelected={4} />
       <Dots3 />
       <Obm data-tooltip="On-Board Memory" />
       <div className={styles.divider} />

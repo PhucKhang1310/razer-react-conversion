@@ -16,6 +16,18 @@
   &:hover {
     cursor: pointer;
   }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #44d62c;
+    border-radius: 8px;
+
+    will-change: transform, background;
+    transition: transform 0.2s, background 0.3s;
+  }
 }
 
 .sliderContainer {
@@ -26,4 +38,116 @@
 
   will-change: opacity;
   transition: opacity 0.3s;
+
+  &.enhancements {
+    width: 490px;
+    margin-left: 30px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    will-change: height, opacity;
+    transition: height 0.3s, opacity 0.3s;
+
+    &.on {
+      height: 64px;
+      opacity: 1;
+      overflow: unset;
+      margin-bottom: 20px;
+    }
+  }
+
+  .foot {
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+    /*visibility: hidden;*/
+    /*opacity: 0;*/
+    visibility: visible;
+
+    opacity: 1;
+
+    will-change: visibility, opacity;
+    transition: visibility 0s, opacity 0.3s linear;
+  }
+
+  .left {
+    height: 6px;
+    border-radius: 3px;
+    background: #44d62c;
+    /*background: orange;*/
+    width: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 25px;
+    z-index: 2;
+    max-width: 100%;
+  }
+
+  .track {
+    height: 6px;
+    width: 100%;
+    border-radius: 3px;
+    z-index: 1;
+    position: absolute;
+    bottom: 25px;
+    background: #2b741f;
+    z-index: 1;
+  }
+
+  &.on {
+    opacity: 1;
+    .slider {
+      &::-webkit-slider-thumb:hover {
+        cursor: pointer;
+        /*background: #fff;*/
+        background: #5d5d5d;
+        border: 2px solid #44d62c;
+      }
+
+      &::-webkit-slider-thumb:active {
+        background: #383838;
+        border: 2px solid #44d62c;
+        /*transform: scale(1.2);*/
+      }
+    }
+
+    .foot {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.foot {
+  &.min {
+    left: 0;
+  }
+  &.mid {
+    opacity: 0 !important;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  &.max {
+    right: 0;
+  }
+}
+
+.sliderTip {
+  position: absolute;
+  background-color: #44d62c;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #212121;
+  line-height: 14px;
+  border-radius: 3px;
+  opacity: 1;
+  will-change: opacity;
+  transition: opacity 0.3s;
+  bottom: 42px;
+  pointer-events: none;
+
+  will-change: left;
+  transition: left 0.1s;
 }

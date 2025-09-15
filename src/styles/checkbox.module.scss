@@ -1,3 +1,23 @@
+@keyframes ticktop {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: calc(20px * 0.77);
+  }
+}
+@keyframes tickbottom {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: calc(20px * 0.48);
+  }
+}
+
 .checkItem {
   position: relative;
   margin-bottom: 9px;
@@ -55,10 +75,42 @@
     -webkit-transform: rotate(-50deg);
     transform: rotate(-50deg);
   }
+
+  &.checked {
+    border-color: #44d62c;
+    background-color: #44d62c;
+
+    &::after {
+      height: calc(20px * 0.48);
+      animation: tickbottom calc(0.2s/2) ease 0s forwards;
+    }
+
+    &::before {
+      height: calc(20px * 0.77);
+      animation: ticktop 0.2s ease 0s forwards;
+    }
+  }
 }
 
 input[type="checkbox"] {
   display: none;
+
+  &:checked {
+    + .checkBox {
+      border-color: #44d62c;
+      background-color: #44d62c;
+    }
+
+    + .checkBox::after {
+      height: calc(20px * 0.48);
+      animation: tickbottom calc(0.2s/2) ease 0s forwards;
+    }
+  }
+
+  &:checked + .checkBox::before {
+    height: calc(20px * 0.77);
+    animation: ticktop 0.2s ease 0s forwards;
+  }
 }
 
 .checkText {

@@ -1,11 +1,36 @@
-import styles from '../styles/switch.module.scss'
+import { useEffect, useState } from "react";
+import styles from "../styles/switch.module.scss";
 
-const Switch = () => {
-  return (
-    <div className={`${styles.switch} ${styles.on}`}>
-        <div className={styles.handle} />
-    </div>
-  )
+interface SwitchProps {
+  id: string;
+  defaultOn?: boolean;
+  isSliderSwitch?: boolean;
+  onToggle?: (isOn: boolean) => void;
 }
 
-export default Switch
+const Switch = ({
+  id,
+  defaultOn = false,
+  onToggle,
+}: SwitchProps) => {
+  const [isOn, setIsOn] = useState(defaultOn);
+
+  useEffect(() => {
+    setIsOn(defaultOn);
+  }, [defaultOn]);
+
+  const handleClick = () => {
+    const newState = !isOn;
+    setIsOn(newState);
+    onToggle?.(newState);
+  }
+
+
+  return (
+    <div id={id} className={`${styles.switch} ${isOn ? styles.on : ""}`} onClick={handleClick}>
+      <div className={styles.handle} />
+    </div>
+  );
+};
+
+export default Switch;
