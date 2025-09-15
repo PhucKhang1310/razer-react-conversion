@@ -15,6 +15,31 @@
   }
 }
 
+.thxBtn {
+  text-transform: uppercase;
+  border-radius: 3px;
+  /*background-color: #28aadc;*/
+  background-color: #44d62c;
+  color: #000;
+  display: inline-block;
+  width: auto;
+  padding: 0.5rem 1.5rem;
+  /*margin-top: 3rem;*/
+  user-select: none;
+  text-align: center;
+
+  will-change: opacity;
+  transition: opacity 0.3s;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  &:active {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+}
+
 .profileDel {
   flex-direction: column;
   align-items: center;
@@ -51,4 +76,3 @@
     opacity: 1;
   }
 }
-

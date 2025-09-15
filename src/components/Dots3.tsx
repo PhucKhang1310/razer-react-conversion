@@ -3,7 +3,7 @@ import styles from "../styles/dots3.module.scss";
 import hoverBorder from "../styles/hoverBorder.module.scss";
 
 interface Dots3Props {
-  onClick?: () => void;
+  onClick?: (value: string) => void;
 }
 
 const Dots3 = ({ onClick }: Dots3Props) => {
@@ -15,16 +15,16 @@ const Dots3 = ({ onClick }: Dots3Props) => {
   
 
   return (
-    <div className={`${hoverBorder.hoverBorder} ${styles.dots3} ${isActive ? styles.active : ""}`} onClick={onClick}>
+    <div className={`${hoverBorder.hoverBorder} ${styles.dots3} ${isActive ? styles.active : ""}`} onClick={handleClick}>
       <div className={`${styles.profileAct} ${isActive ? styles.show : ""}`}>
-        <div className={styles.action}>add</div>
-        <div className={styles.action}>import</div>
+        <div className={styles.action} onClick={() => onClick?.("add")}>add</div>
+        <div className={styles.action} onClick={() => onClick?.("import")}>import</div>
         <div className={styles.divider}></div>
-        <div className={styles.action}>rename</div>
-        <div className={styles.action}>duplicate</div>
-        <div className={styles.action}>export</div>
+        <div className={styles.action} onClick={() => onClick?.("rename")}>rename</div>
+        <div className={styles.action} onClick={() => onClick?.("duplicate")}>duplicate</div>
+        <div className={styles.action} onClick={() => onClick?.("export")}>export</div>
         <div className={styles.divider}></div>
-        <div className={styles.action}>delete</div>
+        <div className={styles.action} onClick={() => onClick?.("delete")}>delete</div>
       </div>
     </div>
   );

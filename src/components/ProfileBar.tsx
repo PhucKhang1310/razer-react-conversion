@@ -7,6 +7,7 @@ import Dropdown from "./Dropdown";
 import Loader from "./Loader";
 import Obm from "./Obm";
 import DeleteAlert from "./DeleteAlert";
+import { useState } from "react";
 
 const profiles = [
   "Default Profile",
@@ -19,16 +20,25 @@ const profiles = [
   "Profile 8",
 ];
 
+
+
 const ProfileBar = () => {
+  const [alertVisibile, setAlertVisible] = useState(false);
+  const onClick = (value: string) => {
+    if (value === "delete") {
+      setAlertVisible(true);
+    }
+  }
+
   return (
     <div className={`${styles.profileBar} ${tip.tipContainer}`}>
       <Loader />
       <div className={styles.profileText}>profile</div>
       <Dropdown id="profile-dropdown" options={profiles} defaultSelected={4} />
-      <Dots3 />
-      <div className={styles.profileDel}>
-        <DeleteAlert />
-      </div>
+      <Dots3 onClick={onClick} />
+      <span className={styles.profileDel}>
+        <DeleteAlert visible={alertVisibile} onClose={() => setAlertVisible(false)} />
+      </span>
       <Obm data-tooltip="On-Board Memory" />
       <div className={styles.divider} />
       <Batt data-tooltip="30% Battery" />
