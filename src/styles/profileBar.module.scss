@@ -53,4 +53,11 @@
   &.show {
     display: block;
   }
+  &:focus {
+    outline: none;
+  }
+}
+
+::selection {
+  	background: rgba(68,214,44, 0.3);
 }
