@@ -57,7 +57,7 @@
     -webkit-transform-origin: left top;
     transform-origin: left top;
     border-radius: calc(20px * 0.12);
-    content: " ";
+    content: ' ';
     -webkit-transition: opacity ease 0.5;
     transition: opacity ease 0.5;
   }
@@ -92,7 +92,7 @@
   }
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   display: none;
 
   &:checked {

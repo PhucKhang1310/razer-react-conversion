@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import styles from "../styles/dropdown.module.scss";
+import { useEffect, useRef, useState } from 'react';
+import styles from '../styles/dropdown.module.scss';
 
 interface DropdownProps {
   id: string;
@@ -15,7 +15,7 @@ const Dropdown = ({ id, options = [], disabled = false, onSelect = () => {}, sel
   const dropdownRef = useRef<HTMLDivElement>(null);
   const optionsRef = useRef<HTMLDivElement>(null);
 
-  const selectedText = options[selectedIndex] || "";
+  const selectedText = options[selectedIndex] || '';
   const isDisabled = disabled || options.length <= 1;
 
   const toggleDropdown = (forceClose = false) => {
@@ -27,11 +27,11 @@ const Dropdown = ({ id, options = [], disabled = false, onSelect = () => {}, sel
 
       if (optionsRef.current) {
         if (checkBtm + dropH >= window.innerHeight) {
-          optionsRef.current.style.top = "unset";
-          optionsRef.current.style.bottom = "28px";
+          optionsRef.current.style.top = 'unset';
+          optionsRef.current.style.bottom = '28px';
         } else {
-          optionsRef.current.style.bottom = "unset";
-          optionsRef.current.style.top = "27px";
+          optionsRef.current.style.bottom = 'unset';
+          optionsRef.current.style.top = '27px';
         }
       }
       setIsOpen(true);
@@ -64,9 +64,9 @@ const Dropdown = ({ id, options = [], disabled = false, onSelect = () => {}, sel
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isOpen]);
 
@@ -77,8 +77,8 @@ const Dropdown = ({ id, options = [], disabled = false, onSelect = () => {}, sel
         id={id}
         className={`
           ${styles.dropdown}
-          ${isOpen ? styles.expand : ""}
-          ${isDisabled ? styles.disabled : ""}
+          ${isOpen ? styles.expand : ''}
+          ${isDisabled ? styles.disabled : ''}
         `}
         onClick={() => !isDisabled && toggleDropdown()}
       >
@@ -90,13 +90,13 @@ const Dropdown = ({ id, options = [], disabled = false, onSelect = () => {}, sel
         id={`${id}Opt`}
         className={`
           ${styles.options}
-          ${isOpen ? styles.expand : ""}
+          ${isOpen ? styles.expand : ''}
         `}
       >
         {options.map((option, index) => (
           <div
             key={index}
-            className={`${styles.option} ${selectedIndex === index ? styles.selected : ""}`}
+            className={`${styles.option} ${selectedIndex === index ? styles.selected : ''}`}
             onClick={() => selectOption(index)}
           >
             {option}

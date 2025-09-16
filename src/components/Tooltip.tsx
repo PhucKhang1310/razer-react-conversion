@@ -1,4 +1,4 @@
-import styles from "../styles/tooltip.module.scss";
+import styles from '../styles/tooltip.module.scss';
 
 interface TooltipProps {
   tipText?: string;

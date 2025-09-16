@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import styles from "../styles/switch.module.scss";
+import { useEffect, useState } from 'react';
+import styles from '../styles/switch.module.scss';
 
 interface SwitchProps {
   id: string;
@@ -22,7 +22,7 @@ const Switch = ({ id, defaultOn = false, onToggle }: SwitchProps) => {
   };
 
   return (
-    <div id={id} className={`${styles.switch} ${isOn ? styles.on : ""}`} onClick={handleClick}>
+    <div id={id} className={`${styles.switch} ${isOn ? styles.on : ''}`} onClick={handleClick}>
       <div className={styles.handle} />
     </div>
   );

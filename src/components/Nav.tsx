@@ -1,4 +1,4 @@
-import styles from "../styles/nav.module.scss";
+import styles from '../styles/nav.module.scss';
 
 interface NavProps {
   title?: string;

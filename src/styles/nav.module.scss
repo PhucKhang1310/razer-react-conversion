@@ -1,4 +1,4 @@
-@import "../fonts/razerf5.css";
+@import '../fonts/razerf5.css';
 
 .nav {
   height: 100%;
@@ -44,11 +44,11 @@
   }
 
   &.back {
-    background-image: url("../../public/nav_back_arrow.svg");
+    background-image: url('../../public/nav_back_arrow.svg');
   }
 
   &.forward {
-    background-image: url("../../public/nav_fwd_arrow.svg");
+    background-image: url('../../public/nav_fwd_arrow.svg');
   }
 }
 

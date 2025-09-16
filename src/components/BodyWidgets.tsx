@@ -1,7 +1,7 @@
-import styles from "../styles/bodyWidget.module.scss";
-import WidgetBottomRight from "./WidgetBottomRight";
-import WidgetLeft from "./WidgetLeft";
-import WidgetTopRight from "./WidgetTopRight";
+import styles from '../styles/bodyWidget.module.scss';
+import WidgetBottomRight from './WidgetBottomRight';
+import WidgetLeft from './WidgetLeft';
+import WidgetTopRight from './WidgetTopRight';
 const BodyWidgets = () => {
   return (
     <div className={styles.bodyWidgets}>

@@ -5,46 +5,46 @@
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../../public/icon_battery_100.svg");
+  background-image: url('../../public/icon_battery_100.svg');
 
   &.charging {
-    background-image: url("../../public/icon_battery_charging.svg");
+    background-image: url('../../public/icon_battery_charging.svg');
   }
   &.batt-100 {
-    background-image: url("../../public/icon_battery_100.svg");
+    background-image: url('../../public/icon_battery_100.svg');
   }
   &.batt-80 {
-    background-image: url("../../public/icon_battery_80.svg");
+    background-image: url('../../public/icon_battery_80.svg');
   }
   &.batt-90 {
-    background-image: url("../../public/icon_battery_90.svg");
+    background-image: url('../../public/icon_battery_90.svg');
   }
   &.batt-70 {
-    background-image: url("../../public/icon_battery_70.svg");
+    background-image: url('../../public/icon_battery_70.svg');
   }
   &.batt-60 {
-    background-image: url("../../public/icon_battery_60.svg");
+    background-image: url('../../public/icon_battery_60.svg');
   }
   &.batt-50 {
-    background-image: url("../../public/icon_battery_50.svg");
+    background-image: url('../../public/icon_battery_50.svg');
   }
   &.batt-40 {
-    background-image: url("../../public/icon_battery_40.svg");
+    background-image: url('../../public/icon_battery_40.svg');
   }
   &.batt-30 {
-    background-image: url("../../public/icon_battery_30.svg");
+    background-image: url('../../public/icon_battery_30.svg');
   }
   &.batt-20 {
-    background-image: url("../../public/icon_battery_20.svg");
+    background-image: url('../../public/icon_battery_20.svg');
   }
   &.batt-10 {
-    background-image: url("../../public/icon_battery_10.svg");
+    background-image: url('../../public/icon_battery_10.svg');
   }
   &.batt-0 {
-    background-image: url("../../public/icon_battery_0.svg");
+    background-image: url('../../public/icon_battery_0.svg');
   }
   &.batt-off {
-    background-image: url("../../public/icon_device_off.svg");
+    background-image: url('../../public/icon_device_off.svg');
   }
 
   &:hover {

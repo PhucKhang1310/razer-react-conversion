@@ -1,26 +1,26 @@
-import styles from "../styles/profileBar.module.scss";
-import tip from "../styles/icontip.module.scss";
+import styles from '../styles/profileBar.module.scss';
+import tip from '../styles/icontip.module.scss';
 
-import Batt from "./Batt";
-import Dots3 from "./Dots3";
-import Dropdown from "./Dropdown";
-import Loader from "./Loader";
-import Obm from "./Obm";
-import DeleteAlert from "./DeleteAlert";
-import { useCallback, useEffect, useRef, useState } from "react";
+import Batt from './Batt';
+import Dots3 from './Dots3';
+import Dropdown from './Dropdown';
+import Loader from './Loader';
+import Obm from './Obm';
+import DeleteAlert from './DeleteAlert';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 const ProfileBar = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const [editValue, setEditValue] = useState("");
+  const [editValue, setEditValue] = useState('');
   const [profiles, setProfiles] = useState([
-    "Default Profile",
-    "Profile 2",
-    "Profile 3",
-    "Profile 4",
-    "Profile 5",
-    "Profile 6",
-    "Profile 7",
-    "Profile 8",
+    'Default Profile',
+    'Profile 2',
+    'Profile 3',
+    'Profile 4',
+    'Profile 5',
+    'Profile 6',
+    'Profile 7',
+    'Profile 8',
   ]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [newCounter, setNewCounter] = useState(0);
@@ -30,15 +30,15 @@ const ProfileBar = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const alertRef = useRef<HTMLDivElement>(null);
 
-  const insertAndSelect = (mode: "new" | "dup") => {
+  const insertAndSelect = (mode: 'new' | 'dup') => {
     let name = profiles[selectedIndex];
 
-    if (mode === "new") {
-      name = newCounter > 0 ? `New Profile (${newCounter})` : "New Profile";
+    if (mode === 'new') {
+      name = newCounter > 0 ? `New Profile (${newCounter})` : 'New Profile';
       setNewCounter(newCounter + 1);
-    } else if (mode === "dup") {
-      const open = name.lastIndexOf("(");
-      const close = name.lastIndexOf(")");
+    } else if (mode === 'dup') {
+      const open = name.lastIndexOf('(');
+      const close = name.lastIndexOf(')');
       let hasNumber = open > 0 && close > 0 && close > open;
 
       let dupCounter = 1;
@@ -64,16 +64,16 @@ const ProfileBar = () => {
 
   const onOptionSelect = (value: string) => {
     switch (value) {
-      case "add":
-        insertAndSelect("new");
+      case 'add':
+        insertAndSelect('new');
         break;
-      case "duplicate":
-        insertAndSelect("dup");
+      case 'duplicate':
+        insertAndSelect('dup');
         break;
-      case "rename":
+      case 'rename':
         startEditing();
         break;
-      case "delete":
+      case 'delete':
         if (profiles.length <= 1) break;
         setAlertVisible(true);
         break;
@@ -101,15 +101,15 @@ const ProfileBar = () => {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       saveEdit();
-    } else if (e.key === "Escape") {
+    } else if (e.key === 'Escape') {
       setIsEditing(false);
     }
   };
 
   const saveEdit = useCallback(() => {
-    if (editValue.trim() === "") {
+    if (editValue.trim() === '') {
       setIsEditing(false);
       return;
     }
@@ -126,11 +126,11 @@ const ProfileBar = () => {
     };
 
     if (dotsActive) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [dotsActive]);
 
@@ -141,10 +141,10 @@ const ProfileBar = () => {
       }
     };
     if (alertVisible) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     }
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [alertVisible]);
 
@@ -152,12 +152,12 @@ const ProfileBar = () => {
     <div className={`${styles.profileBar} ${tip.tipContainer}`}>
       <Loader />
       <div className={styles.profileText}>profile</div>
-      <Dropdown id='profile-dropdown' options={profiles} selectedIndex={selectedIndex} onSelect={onSelect} />
+      <Dropdown id="profile-dropdown" options={profiles} selectedIndex={selectedIndex} onSelect={onSelect} />
       <input
         ref={inputRef}
-        type='text'
-        name='profile'
-        className={`${styles.profileEdit} ${isEditing ? styles.show : ""}`}
+        type="text"
+        name="profile"
+        className={`${styles.profileEdit} ${isEditing ? styles.show : ''}`}
         onChange={handleEdit}
         value={editValue}
         maxLength={25}
@@ -173,9 +173,9 @@ const ProfileBar = () => {
       <span className={styles.profileDel}>
         <DeleteAlert ref={alertRef} visible={alertVisible} onClose={onClose} />
       </span>
-      <Obm dataTooltip='On-Board Memory' />
+      <Obm dataTooltip="On-Board Memory" />
       <div className={styles.divider} />
-      <Batt dataTooltip='30% Battery' />
+      <Batt dataTooltip="30% Battery" />
     </div>
   );
 };

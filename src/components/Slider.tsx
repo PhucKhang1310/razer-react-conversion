@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import styles from "../styles/slider.module.scss";
+import { useEffect, useRef, useState } from 'react';
+import styles from '../styles/slider.module.scss';
 
 interface SliderProps {
   id: string;
@@ -20,8 +20,8 @@ const Slider = ({
   max = 100,
   step = 1,
   defaultValue = 50,
-  minText = "low",
-  maxText = "high",
+  minText = 'low',
+  maxText = 'high',
   disabled = false,
   isEnhancement = false,
   onChange,
@@ -54,8 +54,8 @@ const Slider = ({
     };
 
     updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,7 +67,7 @@ const Slider = ({
   return (
     <div
       ref={containerRef}
-      className={`${styles.sliderContainer} ${isEnhancement ? styles.enhancements : ""} ${!disabled ? styles.on : ""}`}
+      className={`${styles.sliderContainer} ${isEnhancement ? styles.enhancements : ''} ${!disabled ? styles.on : ''}`}
       id={id}
     >
       <div className={`${styles.foot} ${styles.min}`}> {minText}</div>
@@ -84,7 +84,7 @@ const Slider = ({
 
       <input
         ref={sliderRef}
-        type='range'
+        type="range"
         min={min}
         max={max}
         step={step}

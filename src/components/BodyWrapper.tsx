@@ -1,6 +1,6 @@
-import styles from "../styles/bodyWrapper.module.scss";
-import BodyWidgets from "./BodyWidgets";
-import ProfileBar from "./ProfileBar";
+import styles from '../styles/bodyWrapper.module.scss';
+import BodyWidgets from './BodyWidgets';
+import ProfileBar from './ProfileBar';
 
 const BodyWrapper = () => {
   return (

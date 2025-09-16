@@ -1,4 +1,4 @@
-import styles from "../styles/navUser.module.scss";
+import styles from '../styles/navUser.module.scss';
 
 const NavUser = () => {
   return (
