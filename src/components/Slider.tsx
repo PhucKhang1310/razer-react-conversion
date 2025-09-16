@@ -74,24 +74,17 @@ const Slider = ({
       <div className={`${styles.foot} ${styles.mid}`}> medium</div>
       <div className={`${styles.foot} ${styles.max}`}> {maxText}</div>
 
-      <div
-        className={`${styles.left}`}
-        style={{ width: `${getFillWidth()}px` }}
-      />
+      <div className={`${styles.left}`} style={{ width: `${getFillWidth()}px` }} />
 
       <div className={styles.track} />
 
-      <div
-        ref={tipRef}
-        className={styles.sliderTip}
-        style={{ left: `${getTipPosition()}px` }}
-      >
+      <div ref={tipRef} className={styles.sliderTip} style={{ left: `${getTipPosition()}px` }}>
         {value}
       </div>
 
       <input
         ref={sliderRef}
-        type="range"
+        type='range'
         min={min}
         max={max}
         step={step}

@@ -12,7 +12,7 @@ const Checkbox = ({ id, label, onChange }: CheckboxProps) => {
   };
   return (
     <div className={styles.checkItem}>
-      <input type="checkbox" id={id} className={styles.checkBox} onChange={onCheckboxChange} />
+      <input type='checkbox' id={id} className={styles.checkBox} onChange={onCheckboxChange} />
       <label htmlFor={id} className={styles.checkBox}>
         <div className={styles.checkText}>{label}</div>
       </label>

@@ -6,7 +6,7 @@ const BodyWrapper = () => {
   return (
     <div className={`${styles.bodyWrapper} scrollable`}>
       <ProfileBar />
-      <BodyWidgets/>
+      <BodyWidgets />
     </div>
   );
 };

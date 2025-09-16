@@ -1,10 +1,10 @@
 import styles from "../styles/batt.module.scss";
 
-interface BattProps{
-  "data-tooltip"?: string;
+interface BattProps {
+  dataTooltip?: string;
 }
 
-const Batt = ({ "data-tooltip": dataTooltip }: BattProps) => {
+const Batt = ({ dataTooltip: dataTooltip }: BattProps) => {
   return <div className={`${styles.batt} ${styles["batt-30"]}`} data-tooltip={dataTooltip} />;
 };
 

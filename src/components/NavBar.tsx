@@ -7,13 +7,13 @@ const NavBar = () => {
     <div className={styles.navbar}>
       <Nav active back />
       <Nav forward disabled />
-      <Nav title="sound" />
-      <Nav title="mixer" />
-      <Nav title="enhancement" />
-      <Nav title="eq" />
-      <Nav title="mic" active />
-      <Nav title="lighting" />
-      <Nav title="power" />
+      <Nav title='sound' />
+      <Nav title='mixer' />
+      <Nav title='enhancement' />
+      <Nav title='eq' />
+      <Nav title='mic' active />
+      <Nav title='lighting' />
+      <Nav title='power' />
       <NavUser />
     </div>
   );

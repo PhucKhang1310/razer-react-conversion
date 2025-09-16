@@ -18,7 +18,10 @@
   visibility: hidden;
 
   will-change: height, visibility, opacity;
-  transition: height 0.2s, visibility 0s, opacity 0.1s linear;
+  transition:
+    height 0.2s,
+    visibility 0s,
+    opacity 0.1s linear;
   &.show {
     opacity: 1;
     visibility: visible;

@@ -8,15 +8,16 @@ const WidgetTopRight = () => {
 
   return (
     <div className={styles.widget}>
-      <Tooltip tipText="This is a tooltip" />
-      <div className={styles.title}>sidetone
+      <Tooltip tipText='This is a tooltip' />
+      <div className={styles.title}>
+        sidetone
         <span className={styles.switchContainer}>
-            <Switch id="swSidetone" defaultOn={false} onToggle={setIsOn} />
+          <Switch id='swSidetone' defaultOn={false} onToggle={setIsOn} />
         </span>
       </div>
-      <Slider id="slSidetone" minText='0' maxText='100' disabled={!isOn} />
+      <Slider id='slSidetone' minText='0' maxText='100' disabled={!isOn} />
     </div>
-  )
-}
+  );
+};
 
-export default WidgetTopRight
+export default WidgetTopRight;

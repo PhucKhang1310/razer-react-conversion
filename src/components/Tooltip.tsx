@@ -1,9 +1,8 @@
-import styles from '../styles/tooltip.module.scss';
+import styles from "../styles/tooltip.module.scss";
 
 interface TooltipProps {
-    tipText?: string;
+  tipText?: string;
 }
-
 
 const Tooltip = ({ tipText }: TooltipProps) => {
   return (
@@ -11,7 +10,7 @@ const Tooltip = ({ tipText }: TooltipProps) => {
       <div className={styles.help}></div>
       <div className={styles.tip}>{tipText}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Tooltip
+export default Tooltip;

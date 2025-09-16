@@ -9,13 +9,7 @@ interface DropdownProps {
   selectedIndex?: number;
 }
 
-const Dropdown = ({
-  id,
-  options = [],
-  disabled = false,
-  onSelect = () => {},
-  selectedIndex = 0,
-}: DropdownProps) => {
+const Dropdown = ({ id, options = [], disabled = false, onSelect = () => {}, selectedIndex = 0 }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -42,9 +36,7 @@ const Dropdown = ({
       }
       setIsOpen(true);
       if (optionsRef.current && optionsRef.current.children[selectedIndex]) {
-        const selectedElement = optionsRef.current.children[
-          selectedIndex
-        ] as HTMLElement;
+        const selectedElement = optionsRef.current.children[selectedIndex] as HTMLElement;
         optionsRef.current.scrollTop = selectedElement.offsetTop;
       }
     } else if (isOpen || forceClose) {
@@ -104,9 +96,7 @@ const Dropdown = ({
         {options.map((option, index) => (
           <div
             key={index}
-            className={`${styles.option} ${
-              selectedIndex === index ? styles.selected : ""
-            }`}
+            className={`${styles.option} ${selectedIndex === index ? styles.selected : ""}`}
             onClick={() => selectOption(index)}
           >
             {option}

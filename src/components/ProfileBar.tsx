@@ -152,16 +152,11 @@ const ProfileBar = () => {
     <div className={`${styles.profileBar} ${tip.tipContainer}`}>
       <Loader />
       <div className={styles.profileText}>profile</div>
-      <Dropdown
-        id="profile-dropdown"
-        options={profiles}
-        selectedIndex={selectedIndex}
-        onSelect={onSelect}
-      />
+      <Dropdown id='profile-dropdown' options={profiles} selectedIndex={selectedIndex} onSelect={onSelect} />
       <input
         ref={inputRef}
-        type="text"
-        name="profile"
+        type='text'
+        name='profile'
         className={`${styles.profileEdit} ${isEditing ? styles.show : ""}`}
         onChange={handleEdit}
         value={editValue}
@@ -178,9 +173,9 @@ const ProfileBar = () => {
       <span className={styles.profileDel}>
         <DeleteAlert ref={alertRef} visible={alertVisible} onClose={onClose} />
       </span>
-      <Obm data-tooltip="On-Board Memory" />
+      <Obm dataTooltip='On-Board Memory' />
       <div className={styles.divider} />
-      <Batt data-tooltip="30% Battery" />
+      <Batt dataTooltip='30% Battery' />
     </div>
   );
 };

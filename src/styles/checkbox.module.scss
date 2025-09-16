@@ -82,7 +82,7 @@
 
     &::after {
       height: calc(20px * 0.48);
-      animation: tickbottom calc(0.2s/2) ease 0s forwards;
+      animation: tickbottom calc(0.2s / 2) ease 0s forwards;
     }
 
     &::before {
@@ -103,7 +103,7 @@ input[type="checkbox"] {
 
     + .checkBox::after {
       height: calc(20px * 0.48);
-      animation: tickbottom calc(0.2s/2) ease 0s forwards;
+      animation: tickbottom calc(0.2s / 2) ease 0s forwards;
     }
   }
 

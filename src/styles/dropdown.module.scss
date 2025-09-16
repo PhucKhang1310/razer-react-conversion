@@ -22,7 +22,9 @@
   height: 27px;
 
   will-change: opacity, border-color;
-  transition: opacity 0.3s, border-color 0.2s;
+  transition:
+    opacity 0.3s,
+    border-color 0.2s;
 
   .selected {
     white-space: nowrap;
@@ -86,7 +88,10 @@
   width: 100%;
 
   will-change: height, max-height, border-bottom;
-  transition: height 0.2s, max-height 0.2s, border-bottom 0.1s;
+  transition:
+    height 0.2s,
+    max-height 0.2s,
+    border-bottom 0.1s;
 
   &.expand {
     height: auto;

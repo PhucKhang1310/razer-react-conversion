@@ -1,15 +1,15 @@
 .bodyWidgets {
-    display: flex;
-	max-width: 1240px;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: auto;
+  display: flex;
+  max-width: 1240px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
 }
 
 .widgetCol {
-	display: flex;
-	flex: auto;
-	width: 600px;
-	flex-direction: column;
+  display: flex;
+  flex: auto;
+  width: 600px;
+  flex-direction: column;
 }

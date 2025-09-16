@@ -11,26 +11,14 @@ const WidgetBottomRight = () => {
 
   return (
     <div className={styles.widget}>
-      <Tooltip tipText="This is a tooltip" />
+      <Tooltip tipText='This is a tooltip' />
       <div className={styles.title}>enhancements</div>
-      <Checkbox
-        id="checkNorm"
-        label="Volume Normalization"
-        onChange={setIsNormChecked}
-      />
-      <Slider id="slNorm" isEnhancement={true} min={10} disabled={!isNormChecked}/>
-      <Checkbox
-        id="checkAmb"
-        label="Ambient Noise Reduction"
-        onChange={setIsAmbChecked}
-      />
-       <Slider id="slAmb" isEnhancement={true} min={10} disabled={!isAmbChecked}/>
-      <Checkbox
-        id="checkClarity"
-        label="Voice Clarity"
-        onChange={setIsClarityChecked}
-      />
-      <Slider id="slClarity" isEnhancement={true} min={10} disabled={!isClarityChecked}/>
+      <Checkbox id='checkNorm' label='Volume Normalization' onChange={setIsNormChecked} />
+      <Slider id='slNorm' isEnhancement={true} min={10} disabled={!isNormChecked} />
+      <Checkbox id='checkAmb' label='Ambient Noise Reduction' onChange={setIsAmbChecked} />
+      <Slider id='slAmb' isEnhancement={true} min={10} disabled={!isAmbChecked} />
+      <Checkbox id='checkClarity' label='Voice Clarity' onChange={setIsClarityChecked} />
+      <Slider id='slClarity' isEnhancement={true} min={10} disabled={!isClarityChecked} />
     </div>
   );
 };

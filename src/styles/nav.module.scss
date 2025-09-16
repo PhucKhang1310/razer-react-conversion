@@ -15,7 +15,11 @@
   opacity: 0.3;
 
   will-change: opacity, background-color, color;
-  transition: opacity 0.3s, background-color 0.3s, color, 0.1s;
+  transition:
+    opacity 0.3s,
+    background-color 0.3s,
+    color,
+    0.1s;
 
   &.active {
     opacity: 1;

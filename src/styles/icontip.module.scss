@@ -1,7 +1,7 @@
 .tipContainer {
   [data-tooltip] {
     /*position: absolute;*/
-    position:relative;
+    position: relative;
     z-index: 2;
     cursor: pointer;
   }
@@ -56,7 +56,9 @@
     text-transform: capitalize;
     white-space: nowrap;
     will-change: visibility, opacity;
-    transition: visibility 0s, opacity 0.3s linear;
+    transition:
+      visibility 0s,
+      opacity 0.3s linear;
     /*margin-left: -80px;*/
   }
 

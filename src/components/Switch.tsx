@@ -8,11 +8,7 @@ interface SwitchProps {
   onToggle?: (isOn: boolean) => void;
 }
 
-const Switch = ({
-  id,
-  defaultOn = false,
-  onToggle,
-}: SwitchProps) => {
+const Switch = ({ id, defaultOn = false, onToggle }: SwitchProps) => {
   const [isOn, setIsOn] = useState(defaultOn);
 
   useEffect(() => {
@@ -23,8 +19,7 @@ const Switch = ({
     const newState = !isOn;
     setIsOn(newState);
     onToggle?.(newState);
-  }
-
+  };
 
   return (
     <div id={id} className={`${styles.switch} ${isOn ? styles.on : ""}`} onClick={handleClick}>

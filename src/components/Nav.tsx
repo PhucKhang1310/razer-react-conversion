@@ -11,15 +11,7 @@ interface NavProps {
 const Nav = ({ title, active, disabled, back, forward }: NavProps) => {
   return (
     <>
-      {title && (
-        <a
-          className={`${styles.nav} ${active && styles.active} ${
-            disabled && styles.disabled
-          }`}
-        >
-          {title}
-        </a>
-      )}
+      {title && <a className={`${styles.nav} ${active && styles.active} ${disabled && styles.disabled}`}>{title}</a>}
       {back && (
         <div
           className={`${styles.nav} ${styles.arrow} ${styles.back} ${active && styles.active} ${disabled && styles.disabled}`}
