@@ -4,43 +4,25 @@ import styles from "../styles/dropdown.module.scss";
 interface DropdownProps {
   id: string;
   options: string[];
-  defaultSelected?: number;
   disabled?: boolean;
   onSelect?: (option: any) => void;
+  selectedIndex?: number;
 }
 
 const Dropdown = ({
   id,
   options = [],
-  defaultSelected = 0,
   disabled = false,
   onSelect = () => {},
+  selectedIndex = 0,
 }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(defaultSelected);
-  const [newCounter, setNewCounter] = useState(0);
-  const [dupCounter, setDupCounter] = useState(0);
-  const [dropdownPosition, setDropdownPosition] = useState<"top" | "bottom">(
-    "bottom"
-  );
 
   const dropdownRef = useRef<HTMLDivElement>(null);
   const optionsRef = useRef<HTMLDivElement>(null);
 
   const selectedText = options[selectedIndex] || "";
   const isDisabled = disabled || options.length <= 1;
-
-  const calculatePosition = () => {
-    if (!dropdownRef.current || !optionsRef.current) return;
-    const checkBtm = dropdownRef.current.getBoundingClientRect().bottom + 2;
-    const dropH = Math.min(180, options.length * 25 + 2);
-
-    if (checkBtm + dropH >= window.innerHeight) {
-      setDropdownPosition("top");
-    } else {
-      setDropdownPosition("bottom");
-    }
-  };
 
   const toggleDropdown = (forceClose = false) => {
     if (!isOpen && !forceClose) {
@@ -71,41 +53,10 @@ const Dropdown = ({
   };
 
   const selectOption = (index: number) => {
-    setSelectedIndex(index);
+    if (onSelect) {
+      onSelect(index);
+    }
     setIsOpen(false);
-
-    const selectedOptions = options[index];
-
-    if (onSelect) {
-      onSelect(selectedOptions);
-    }
-  };
-
-  const insertAndSelect = (mode: "new" | "dup") => {
-    let name = selectedText;
-
-    if (mode === "new") {
-      name = newCounter > 0 ? `New Profile (${newCounter})` : "New Profile";
-    } else if (mode === "dup") {
-      const open = name.lastIndexOf("(");
-      const close = name.lastIndexOf(")");
-      let counter = 1;
-      if (open > 0 && close > 0 && close > open) {
-        counter = parseInt(name.substring(open + 1, close)) + 1;
-        name = name.substring(0, open).trim();
-      }
-
-      name = `${name} (${counter})`;
-      setDupCounter(counter);
-    }
-
-    const newOptions = [...options];
-    const newIndex = newOptions.length - 1;
-    setSelectedIndex(newIndex);
-
-    if (onSelect) {
-      onSelect(name);
-    }
   };
 
   useEffect(() => {

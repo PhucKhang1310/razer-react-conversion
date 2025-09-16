@@ -1,33 +1,33 @@
-import { useState } from "react";
+import { forwardRef } from "react";
 import styles from "../styles/dots3.module.scss";
 import hoverBorder from "../styles/hoverBorder.module.scss";
 
 interface Dots3Props {
-  onClick?: (value: string) => void;
+  isActive?: boolean;
+  deleteDisabled?: boolean;
+  onClick?: () => void;
+  onSelect?: (value: string) => void;
 }
 
-const Dots3 = ({ onClick }: Dots3Props) => {
-  const [isActive, setIsActive] = useState(false);
+const Dots3 = forwardRef<HTMLDivElement, Dots3Props>(({ onClick, onSelect, deleteDisabled, isActive }: Dots3Props, ref) => {
 
-  const handleClick = () => {
-    setIsActive(!isActive);
-  }
+
   
 
   return (
-    <div className={`${hoverBorder.hoverBorder} ${styles.dots3} ${isActive ? styles.active : ""}`} onClick={handleClick}>
+    <div ref={ref} className={`${hoverBorder.hoverBorder} ${styles.dots3} ${isActive ? styles.active : ""}`} onClick={onClick}>
       <div className={`${styles.profileAct} ${isActive ? styles.show : ""}`}>
-        <div className={styles.action} onClick={() => onClick?.("add")}>add</div>
-        <div className={styles.action} onClick={() => onClick?.("import")}>import</div>
+        <div className={styles.action} onClick={() => onSelect?.("add")}>add</div>
+        <div className={styles.action} onClick={() => onSelect?.("import")}>import</div>
         <div className={styles.divider}></div>
-        <div className={styles.action} onClick={() => onClick?.("rename")}>rename</div>
-        <div className={styles.action} onClick={() => onClick?.("duplicate")}>duplicate</div>
-        <div className={styles.action} onClick={() => onClick?.("export")}>export</div>
+        <div className={styles.action} onClick={() => onSelect?.("rename")}>rename</div>
+        <div className={styles.action} onClick={() => onSelect?.("duplicate")}>duplicate</div>
+        <div className={styles.action} onClick={() => onSelect?.("export")}>export</div>
         <div className={styles.divider}></div>
-        <div className={styles.action} onClick={() => onClick?.("delete")}>delete</div>
+        <div className={`${styles.action} ${deleteDisabled ? styles.disabled : ""}`} onClick={() => onSelect?.("delete")}>delete</div>
       </div>
     </div>
   );
-};
+});
 
 export default Dots3;
